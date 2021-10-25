@@ -21,6 +21,8 @@
  --background-command-icon-color: #FFFFFF;
  --icon-color: #AFB1B8;
  --icon-color-light: #FFFFFF;
+ --backgroud-icon-special: #F5F4FA;
+ --special-icon-color: #212121;
 }
 
 html {
@@ -121,15 +123,6 @@ body {
     display: flex;
 }
 
-.header-connect {
-    display: flex;
-    margin-left: auto;
-}
-
-.header-contacts {
-    display: flex;
-}
-
 .logo-header {
     display: block;
     font-family: 'Raleway', sans-serif;
@@ -167,13 +160,27 @@ body {
     color: var(--accent-color);
 }
 
+.header-connect {
+    display: flex;
+    margin-left: auto;
+    }
+
+.header-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
 .header-contact-mail,
 .header-contact-tel {
+    display: block;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14px;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+    align-items: center;
+    justify-content: center
 }
 
 .contact-mail {
@@ -188,6 +195,11 @@ body {
     fill: var(--primary-text-color);
 }
 
+.header-contact-mail:hover .contact-mail,
+.header-contact-mail:focus .contact-mail {
+    fill: var(--accent-color);
+}
+
 .header-contact-mail:hover,
 .header-contact-mail:focus {
     color: var(--accent-color);
@@ -198,9 +210,12 @@ body {
     color: var(--accent-color);
 }
 
-.header-contacts-item {
-    align-items: baseline;
+.header-contact-tel:hover .contact-tel,
+.header-contact-tel:focus .contact-tel {
+    fill: var(--accent-color);
 }
+
+
 
 .header-contacts-item:not(:first-child) {
     margin-left: 50px;
@@ -220,7 +235,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    max-width: 1600рх;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -290,6 +305,22 @@ body {
 
 .list-special-text {
     width: 270px;
+}
+
+.special-icon-container {
+    height: 120px;
+    background-color: var(--backgroud-icon-special);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.special-icon {
+    width: 70px;
+    height: 70px;
+    fill: var(--special-icon-color);
 }
 
 .list-special-text:not(:last-child) {
@@ -426,6 +457,52 @@ body {
     background-color: var(--accent-color);
 }
 
+/*-----------------Clients-------------*/
+
+.list-clients {
+    display: flex;
+}
+
+.list-clients-logo {
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-color);
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-clients-logo:hover,
+.list-clients-logo:focus {
+    border: 1px solid var(--accent-color);
+}
+
+.list-clients-logo:hover .clients-logo-icon,
+.list-clients-logo:focus .clients-logo-icon {
+    fill: var(--accent-color);
+}
+
+.clients-logo-icon {
+    width: 106px;
+    height: 60px;
+    fill: var(--icon-color);
+}
+
+.list-clients {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-bottom: -30px;
+}
+
+.list-clients-logo {
+    width: calc((100% - 30px*6) / 6);
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
 /*-----------------Portfolio-------------*/
 
 .filter-button-list {
@@ -473,6 +550,16 @@ body {
     background-color: var(--background-command-card-color);
     }
 
+.filter-cards-item-link {
+    display: block;
+}
+
+.filter-cards-item-link:focus,
+.filter-cards-item-link:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
 .filter-cards-item-description {
     padding: 20px 0 20px 24px;
     border-right: 1px solid #EEEEEE;
@@ -499,6 +586,19 @@ body {
     background-color: var(--background-footer-color);
     padding-top: 60px;
     padding-bottom: 60px;
+}
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-left {
+    margin-right: 70px;
+}
+
+.footer-right {
+    align-items: baseline;
 }
 
 .logo-footer {
@@ -536,4 +636,32 @@ body {
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--footer-contact-color);
+}
+
+.social-title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--active-text-color);
+    margin-bottom: 20px;
+}
+
+.social-link-footer {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-icon-footer {
+    fill: var(--icon-color-light);
+}
+
+.social-link-footer:hover .social-icon-footer,
+.social-link-footer:focus .social-icon-footer {
+    fill: var(--icon-color-light);
+}
+
+.social-link-footer:hover,
+.social-link-footer:focus {
+    background-color: var(--accent-color);
 }
